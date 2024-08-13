@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <a href="/inoiceitems/add/1"> Add</a>
+    <table>
+        <tr>
+            <th>Item Id</th>
+            <th>Invoice ID</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+           <td>{{i[0]}}</td> 
+           <td>{{i[1]}}</td> 
+           <td>{{i[2]}}</td> 
+           <td>{{i[3]}}</td> 
+           <td>{{i[4]}}</td> 
+           <td>{{i[5]}}</td>  
+           <td><a href="/invoiceitems/delete/{{i[0]}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+   
